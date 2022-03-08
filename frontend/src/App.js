@@ -9,9 +9,9 @@ const App = () => {
     <main>
       <Container>
       <h1>Welcome to My EventBrite</h1>
-        <h4>EventBrite is a ticketing and event technology platform
+        <h2>EventBrite is a ticketing and event technology platform
         that helps businesses organize and sell 
-        tickets to events online</h4>
+        tickets to events online</h2>
         </Container>
     </main>
     <Footer /> 
