@@ -1,20 +1,25 @@
 import {Container} from 'react-bootstrap';
+import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
 
 const App = () => {
   return (
     <>
+    <Router>
     <Header />
-    <main>
+    <main className='py-3'>
       <Container>
-      <h1>Welcome to My EventBrite</h1>
-        <h2>EventBrite is a ticketing and event technology platform
-        that helps businesses organize and sell 
-        tickets to events online</h2>
+         <Routes>
+         <Route path='/' element={<HomeScreen />} exact />
+         <Route path='/product/:id' element={<ProductScreen />} /> 
+         </Routes>     
         </Container>
     </main>
     <Footer /> 
+    </Router>
     </>
    
   );
