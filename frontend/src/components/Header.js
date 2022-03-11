@@ -14,7 +14,7 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
             <LinkContainer to="/cart">
-              <Nav.Link><i className='fa fa-shopping-cart'></i> Cart</Nav.Link>
+              <Nav.Link><i className='fa-solid fa-ticket'></i> Ticket</Nav.Link>
               </LinkContainer>
               <LinkContainer to="/login">
               <Nav.Link ><i className='fa-regular fa-user'></i> Sign In</Nav.Link>
