@@ -1,12 +1,24 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import axios from 'axios'
 import { Link, useParams } from 'react-router-dom'
-import events from '../events';
 import {Row, Col, Image, ListGroup, Card, Button} from 'react-bootstrap'
 
 const ProductScreen = () => {
   const params = useParams();
+  const [event, setEvent] = useState({})
 
-  const giveBackProduct = events.find((p) => p._id === params.id)
+  useEffect(() => {
+    const fetchEvent = async () => {
+      const {data} = await axios.get(`/api/events/${params.id}`)
+
+      setEvent(data)
+    }
+
+    fetchEvent()
+
+  }, [])
+
+
     return (
         <>
         <Link className='btn btn-light my-3' to='/'>
@@ -14,15 +26,15 @@ const ProductScreen = () => {
       </Link>
       <Row>
         <Col md={6}>
-          <Image src={giveBackProduct.image} alt={giveBackProduct.name} fluid />
+          <Image src={event.image} alt={event.name} fluid />
         </Col>
         <Col md={3}>
           <ListGroup variant='flush'>
             <ListGroup.Item>
-              <h3>{giveBackProduct.name}</h3>
+              <h3>{event.name}</h3>
             </ListGroup.Item>
-            <ListGroup.Item>Price: ${giveBackProduct.price}</ListGroup.Item>
-            <ListGroup.Item>Description: {giveBackProduct.description}</ListGroup.Item>
+            <ListGroup.Item>Price: ${event.price}</ListGroup.Item>
+            <ListGroup.Item>Description: {event.description}</ListGroup.Item>
           </ListGroup>
         </Col>
         <Col md={3}>
@@ -32,7 +44,7 @@ const ProductScreen = () => {
                 <Row>
                   <Col>Price:</Col>
                   <Col>
-                    <strong>${giveBackProduct.price}</strong>
+                    <strong>${event.price}</strong>
                   </Col>
                 </Row>
               </ListGroup.Item>
@@ -41,7 +53,7 @@ const ProductScreen = () => {
                 <Row>
                   <Col>Status:</Col>
                   <Col>
-                    {giveBackProduct.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
+                    {event.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
                   </Col>
                 </Row>
               </ListGroup.Item>
@@ -49,7 +61,7 @@ const ProductScreen = () => {
                 <Button
                   className='btn-block'
                   type='button'
-                  disabled={giveBackProduct.countInStock === 0}
+                  disabled={event.countInStock === 0}
                 >
                   Add To Cart
                 </Button>
