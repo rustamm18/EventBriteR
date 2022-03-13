@@ -1,0 +1,22 @@
+{
+  "name": "eventbriter",
+  "version": "1.0.0",
+  "description": "My event ticket app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rustamm18/EventBriteR.git"
+  },
+  "author": "Rustam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rustamm18/EventBriteR/issues"
+  },
+  "homepage": "https://github.com/rustamm18/EventBriteR#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
