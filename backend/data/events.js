@@ -2,7 +2,7 @@ const events = [
    {
     _id: '1',
      name: 'TITO NIEVES EN VIVO!',
-    image: '/ImagesSalsaEvents/Clubsur.jpg',
+     image: '/ImagesSalsaEvents/Clubsur.jpg',
     description:
      'Straight from Puerto Rico one of the most acclaimed voices in the Salsa scene Tito Nieves!',
      Date: 'Sat, March 12',

@@ -21,7 +21,7 @@ const HomeScreen = () => {
     <h1>Latest Events</h1>
     <Row>
       {events.map((variablenameshittyconfusingbutmeansadesireditem) => (
-        <Col sm={12} md={6} lg={4} xl={3}>
+        <Col key={variablenameshittyconfusingbutmeansadesireditem._id} sm={12} md={6} lg={4} xl={3}>
           <Event product={variablenameshittyconfusingbutmeansadesireditem} />
           </Col>
       ))}
