@@ -16,7 +16,7 @@ const ProductScreen = () => {
 
     fetchEvent()
 
-  }, [])
+  }, [params])
 
 
     return (
