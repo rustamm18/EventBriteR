@@ -12,10 +12,6 @@ const app = express()
 dotenv.config()
 connectDB()
 
-app.get('/', (req, res) => {
-   res.json({'msg': 'Hello World'}) 
-})
-
 app.use(express.json())
 app.use('/api/events', eventRoutes)
 app.use('/api/users', userRoutes)
